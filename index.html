@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker & Extractor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="panel">
+            <h2>Bộ Chọn Màu</h2>
+            
+            <div class="color-preview-box" id="mainPreview"></div>
+            
+            <div class="input-group">
+                <label for="colorPicker">Chọn màu:</label>
+                <input type="color" id="colorPicker" value="#3498db">
+            </div>
+
+            <div class="color-codes">
+                <div class="code-row">
+                    <span>HEX:</span>
+                    <input type="text" id="hexVal" readonly>
+                    <button class="copy-btn" data-target="hexVal">Copy</button>
+                </div>
+                <div class="code-row">
+                    <span>RGB:</span>
+                    <input type="text" id="rgbVal" readonly>
+                    <button class="copy-btn" data-target="rgbVal">Copy</button>
+                </div>
+                <div class="code-row">
+                    <span>HSL:</span>
+                    <input type="text" id="hslVal" readonly>
+                    <button class="copy-btn" data-target="hslVal">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-area">
+            <h2>Trích Xuất Màu Từ Ảnh</h2>
+            <input type="file" id="imageUpload" accept="image/*">
+            
+            <div class="canvas-container">
+                <canvas id="imageCanvas"></canvas>
+                <div id="hoverTooltip" class="hover-tooltip hidden">
+                    <div id="hoverColor" class="hover-color-box"></div>
+                    <span id="hoverText">#000000</span>
+                </div>
+            </div>
+            <p class="hint">Tải ảnh lên, di chuột vào điểm ảnh bất kỳ để lấy màu điểm ảnh đó</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
